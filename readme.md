@@ -148,5 +148,3 @@ Se você tiver sugestões de melhorias ou encontrar algum bug, sinta-se à vonta
 Feito com 💙 por [Cleiton Carvalho](https://github.com/cleitonpcarvalho)
 
 ---
-
-Agora o README está em um formato claro e explicativo, sem o uso de Markdown. Ele inclui detalhes sobre como usar o código, como ele funciona, e fornece informações sobre os requisitos e as funções do script.

@@ -1,4 +1,4 @@
-# README - Cotação de Produtos no Mercado Livre
+# Cotação de Produtos no Mercado Livre com Webscraping
 
 ## 🚀 Sobre o Projeto
 

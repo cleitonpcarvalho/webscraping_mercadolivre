@@ -1,81 +1,79 @@
-```markdown
-# 🛍️ **Scraper de Cotação de Produtos no Mercado Livre** 🛒
+---
 
-Bem-vindo ao repositório do scraper de cotação de produtos no Mercado Livre! Aqui você vai encontrar um código simples mas poderoso que busca informações sobre preços de produtos e gera uma planilha Excel com esses dados. O script utiliza **Python**, **BeautifulSoup** para parsing HTML, **requests** para fazer requisições HTTP e **openpyxl** para criar a planilha.
+# Scraper de Cotação de Produtos no Mercado Livre
 
-## 🚀 **Objetivo**
+Bem-vindo ao repositório do scraper de cotação de produtos no Mercado Livre! Este projeto tem como objetivo automatizar a busca de preços de produtos na plataforma do Mercado Livre e gerar uma planilha Excel com esses dados. O código é simples, mas muito eficiente e utiliza **Python**, **BeautifulSoup**, **requests**, e **openpyxl** para realizar as operações de scraping e manipulação de dados.
 
-O objetivo deste projeto é automatizar a busca por preços de produtos no Mercado Livre e gerar uma planilha Excel com os seguintes dados:
+## Objetivo
+
+O script busca por informações sobre produtos no Mercado Livre, extraindo os seguintes dados:
 - Nome do produto
 - Preço do produto
-- Link do produto
+- Link para o produto
 
-Com esse scraper, você pode facilmente comparar preços de vários produtos diretamente na plataforma!
+Com isso, você poderá facilmente comparar preços de vários produtos diretamente na plataforma do Mercado Livre, sem precisar navegar por cada página.
 
-## 🔧 **Tecnologias Utilizadas**
+## Tecnologias Utilizadas
 
-- **requests**: Para realizar requisições HTTP e obter o conteúdo das páginas web.
-- **BeautifulSoup**: Para fazer parsing do HTML e extrair as informações relevantes.
-- **openpyxl**: Para criar e manipular a planilha Excel.
+- **requests**: Usado para realizar requisições HTTP e buscar o conteúdo das páginas web.
+- **BeautifulSoup**: Utilizado para fazer o parsing do HTML das páginas e extrair os dados necessários.
+- **openpyxl**: Usado para gerar e manipular planilhas Excel, onde os dados extraídos serão armazenados.
 
-## ⚙️ **Como Funciona?**
+## Como Funciona
 
-1. O código começa pedindo ao usuário o nome de um produto.
-2. A partir do nome do produto, ele busca o HTML da página de resultados do Mercado Livre.
-3. O HTML é então analisado, e os dados dos produtos são extraídos: nome, preço e link.
-4. Esses dados são organizados e salvos em uma planilha Excel com três colunas: **Nome**, **Preço** e **Link**.
-5. Ao final, o arquivo gerado é salvo com o nome `Cotação de [produto].xlsx`.
+1. O script começa pedindo ao usuário que digite o nome de um produto.
+2. A partir desse nome, o código constrói a URL da página de resultados do Mercado Livre e realiza uma requisição para buscar o HTML.
+3. O HTML obtido é analisado com BeautifulSoup para encontrar os nomes, preços e links dos produtos listados.
+4. Com esses dados, o script cria uma planilha Excel contendo o nome do produto, o preço e o link para cada produto encontrado.
+5. Por fim, a planilha gerada é salva com o nome “Cotação de [produto].xlsx”.
 
-## 📦 **Requisitos**
+## Requisitos
 
-Antes de rodar o código, você precisa ter as bibliotecas necessárias instaladas. Você pode instalá-las com o seguinte comando:
+Antes de rodar o código, você precisará instalar as bibliotecas necessárias. Para isso, execute o comando:
 
-```bash
+```
 pip install requests beautifulsoup4 openpyxl
 ```
 
-## 📝 **Exemplo de Uso**
+## Exemplo de Uso
 
 1. Clone o repositório para sua máquina local:
-   
-   ```bash
+
+   ```
    git clone https://github.com/SeuUsuario/scraper-mercadolivre.git
    cd scraper-mercadolivre
    ```
 
 2. Execute o script:
 
-   ```bash
+   ```
    python scraper_mercadolivre.py
    ```
 
-3. O script irá pedir para você digitar o nome do produto que deseja pesquisar. Exemplo:
+3. O script pedirá para você digitar o nome do produto que deseja pesquisar. Por exemplo:
 
    ```
    Digite o nome do produto: notebook
    ```
 
-4. Após a execução, será gerado um arquivo Excel com as cotações dos produtos encontrados.
+4. Após a execução, será gerado um arquivo Excel com os dados dos produtos encontrados.
 
-   - O arquivo gerado terá o nome: `Cotação de notebook.xlsx`
+   O arquivo será salvo com o nome: **Cotação de notebook.xlsx**
 
-## 📊 **Exemplo de Planilha Gerada**
+## Exemplo de Planilha Gerada
 
-A planilha gerada será organizada da seguinte forma:
+A planilha gerada será estruturada da seguinte forma:
 
-| **Nome**                  | **Preço** | **Link**                                                |
-|---------------------------|-----------|---------------------------------------------------------|
-| Notebook Dell Inspiron 15  | R$ 2.499  | [Link](https://www.mercadolivre.com.br)                  |
-| Notebook Acer Aspire 5     | R$ 2.199  | [Link](https://www.mercadolivre.com.br)                  |
+| **Nome**                      | **Preço** | **Link**                                                  |
+|-------------------------------|-----------|-----------------------------------------------------------|
+| Notebook Dell Inspiron 15      | R$ 2.499  | [Link](https://www.mercadolivre.com.br)                    |
+| Notebook Acer Aspire 5         | R$ 2.199  | [Link](https://www.mercadolivre.com.br)                    |
 
-## 🧑‍💻 **Como o Código Funciona**
+## Como o Código Funciona
 
-### 1. **Buscar HTML do Mercado Livre**
+### 1. Buscar HTML do Mercado Livre
 
-A função `buscar_html(busca)` realiza uma requisição para o Mercado Livre, utilizando o nome do produto informado pelo usuário.
-
-- **Objetivo**: Obter o conteúdo HTML da página de resultados.
-- **Tecnologia usada**: `requests.get()`
+A função **buscar_html(busca)** faz uma requisição HTTP para o Mercado Livre, usando o nome do produto fornecido pelo usuário, e retorna o conteúdo HTML da página de resultados.
 
 ```python
 def buscar_html(busca):
@@ -95,12 +93,9 @@ def buscar_html(busca):
         return None
 ```
 
-### 2. **Parser do HTML**
+### 2. Parser do HTML
 
-A função `parser_html(html)` usa o BeautifulSoup para analisar o HTML e extrair os dados dos produtos: nome, preço e link.
-
-- **Objetivo**: Extrair dados relevantes do HTML.
-- **Tecnologia usada**: `BeautifulSoup`
+A função **parser_html(html)** usa o BeautifulSoup para analisar o HTML e extrair as informações de nome, preço e link de cada produto listado na página.
 
 ```python
 def parser_html(html):
@@ -113,12 +108,9 @@ def parser_html(html):
     return list(produtos)
 ```
 
-### 3. **Gerar Planilha Excel**
+### 3. Gerar Planilha Excel
 
-A função `gerar_planilha(pesquisa)` pega os dados extraídos e cria uma planilha Excel com três colunas: **Nome**, **Preço** e **Link**.
-
-- **Objetivo**: Gerar e salvar uma planilha Excel.
-- **Tecnologia usada**: `openpyxl`
+A função **gerar_planilha(pesquisa)** cria uma planilha Excel utilizando a biblioteca openpyxl. Ela organiza os dados extraídos em três colunas: **Nome**, **Preço**, e **Link**.
 
 ```python
 def gerar_planilha(pesquisa):
@@ -140,20 +132,21 @@ def gerar_planilha(pesquisa):
         print("Não foi possível gerar o arquivo!")
 ```
 
-## ⚠️ **Erros Possíveis**
+## Erros Possíveis
 
-1. **Erro de Conexão**: Caso o Mercado Livre esteja fora do ar ou a URL não seja encontrada.
-2. **Erro ao Gerar Planilha**: Se não houver dados suficientes para gerar a planilha.
+1. **Erro de Conexão**: Se o Mercado Livre estiver fora do ar ou a URL não for encontrada.
+2. **Erro ao Gerar Planilha**: Se não forem encontrados dados suficientes para gerar a planilha.
 
-## 🤖 **Sobre o Código**
+## Sobre o Código
 
-O código foi desenvolvido para ser simples, eficiente e funcional. Ele utiliza técnicas de web scraping para extrair informações úteis de uma plataforma popular, permitindo comparar preços de produtos de maneira rápida e prática. E o melhor: tudo é armazenado em um arquivo Excel, facilitando a análise posterior.
+O código foi desenvolvido para ser simples e eficiente. Ele usa técnicas de web scraping para extrair informações valiosas de uma plataforma muito popular, o Mercado Livre, permitindo que você compare os preços de vários produtos de forma prática. O resultado é armazenado em uma planilha Excel, o que facilita a análise posterior.
 
-## 💡 **Contribua!**
+## Contribua!
 
-Se você tiver sugestões ou melhorias para este projeto, fique à vontade para abrir uma **issue** ou fazer um **pull request**!
+Se você tiver sugestões de melhorias ou encontrar algum bug, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**!
+
+Feito com 💙 por [Seu Nome](https://github.com/SeuUsuario)
 
 ---
 
-Feito com 💙 por [Seu Nome](https://github.com/cleitonpcarvalho)
-```
+Agora o README está em um formato claro e explicativo, sem o uso de Markdown. Ele inclui detalhes sobre como usar o código, como ele funciona, e fornece informações sobre os requisitos e as funções do script.

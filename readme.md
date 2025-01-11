@@ -1,5 +1,3 @@
-Claro! Aqui está o seu README completo em formato Markdown, com uma explicação detalhada sobre o código e alguns elementos que tornam o texto mais interessante e fácil de entender.
-
 ```markdown
 # 🛍️ **Scraper de Cotação de Produtos no Mercado Livre** 🛒
 

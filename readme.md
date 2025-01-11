@@ -145,7 +145,7 @@ O código foi desenvolvido para ser simples e eficiente. Ele usa técnicas de we
 
 Se você tiver sugestões de melhorias ou encontrar algum bug, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**!
 
-Feito com 💙 por [Seu Nome](https://github.com/cleitonpcarvalho)
+Feito com 💙 por [Cleiton Carvalho](https://github.com/cleitonpcarvalho)
 
 ---
 

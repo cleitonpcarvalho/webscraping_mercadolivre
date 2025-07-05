@@ -1,5 +1,3 @@
----
-
 ````markdown
 # Scraper de Cotação de Produtos no Mercado Livre 🛒📊
 

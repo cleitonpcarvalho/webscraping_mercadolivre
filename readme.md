@@ -1,11 +1,3 @@
-Claro, Cleiton! Aqui está seu `README.md` **atualizado**, com:
-
-* Explicação da nova **interface moderna com `customtkinter`**
-* Comando atualizado de execução com `app.py`
-* Link para o **vídeo no YouTube**
-* Correção da URL de clonagem
-* Ajustes de clareza e organização visual
-
 ---
 
 ````markdown
